@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android:proxy" : "react-native run-android --variant=proxy --main-activity MainActivity",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",

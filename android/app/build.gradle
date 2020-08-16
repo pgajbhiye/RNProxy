@@ -79,6 +79,7 @@ import com.android.build.OutputFile
 
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
+    bundleInProxy : true
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -154,6 +155,12 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+        }
+        proxy {
+            debuggable false
+            matchingFallbacks = ['release']
+            signingConfig signingConfigs.debug
+            //Use release signing key here instead of debug
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
